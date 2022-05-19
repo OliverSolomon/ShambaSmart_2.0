@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   fl_chart: ^0.35.0
   flutter_native_splash: ^2.2.0+1
+  # flutter_sparkline: ^0.1.0
 
 flutter_native_splash:
   background_image: assets/images/splashBackground.png

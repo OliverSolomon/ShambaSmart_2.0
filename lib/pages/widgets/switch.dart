@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: mySwitch(),
-  ));
-}
-
 class mySwitch extends StatefulWidget {
   @override
   _mySwitchState createState() => _mySwitchState();
