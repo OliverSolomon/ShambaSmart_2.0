@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shamba_smart/pages/widgets/newNav.dart';
 import 'package:shamba_smart/pages/widgets/globalTop.dart';
-import 'package:shamba_smart/pages/widgets/globalEdit.dart';
+import 'package:shamba_smart/pages/widgets/KukuParameters/AmmoniaParamCard.dart';
+import 'package:shamba_smart/pages/widgets/KukuParameters/FeedsParamCard.dart';
+import 'package:shamba_smart/pages/widgets/KukuParameters/TempParamCard.dart';
+import 'package:shamba_smart/pages/widgets/KukuParameters/LightsParamCard.dart';
+import 'package:shamba_smart/pages/FeedsGraph.dart';
 
 class Shamba extends StatefulWidget {
   const Shamba({Key? key}) : super(key: key);
@@ -72,196 +76,69 @@ class _ShambaState extends State<Shamba> {
             ),
             const SizedBox(height: 30.0),
             //* CARDS
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: <
-                Widget>[
-              //? Cards Holder
-              Column(
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  //! Start of First card
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.30,
-                    width: MediaQuery.of(context).size.width * 0.40,
-                    // color: Colors.green,
-                    decoration: BoxDecoration(
-                      color: const Color.fromRGBO(29, 197, 126, 1),
-                      borderRadius: BorderRadius.circular(16),
-                      // image: DecorationImage(
-                      //   fit: BoxFit.cover,
-                      //   colorFilter: ColorFilter.mode(
-                      //       Colors.black.withOpacity(0.2), BlendMode.dstATop),
-                      //   image: const AssetImage(
-                      //     'assets/images/farmLand.jpg',
-                      //   ),
-                      // ),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.white,
-                          spreadRadius: 1,
-                          blurRadius: 7,
-                          offset: Offset(-5, -5), // changes position of shadow
-                        ),
-                        BoxShadow(
-                          color: Color.fromRGBO(21, 183, 123, .4),
-                          spreadRadius: 1,
-                          blurRadius: 4,
-                          offset: Offset(5, 5), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 35.0),
-                        //* Column inside card to help in odering elements
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            //* Row having Icon and my Shamba text
-                          ],
-                        )),
-                  ),
-                  // division
-                  const SizedBox(
-                    height: 20.0,
-                  ),
+                  //? Cards Holder
+                  Column(
+                    children: <Widget>[
+                      //! Start of First card
+                      InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const FeedsGraph()),
+                            );
+                          },
+                          child: const AmmoniaCard()),
+                      // division
+                      const SizedBox(
+                        height: 20.0,
+                      ),
 
-                  //! Start of Second Card
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.27,
-                    width: MediaQuery.of(context).size.width * 0.40,
-                    // color: Colors.green,
-                    decoration: BoxDecoration(
-                      color: const Color.fromRGBO(228, 55, 211, 1),
-                      borderRadius: BorderRadius.circular(16),
-                      // image: DecorationImage(
-                      //   fit: BoxFit.cover,
-                      //   colorFilter: ColorFilter.mode(
-                      //       Colors.black.withOpacity(0.2), BlendMode.dstATop),
-                      //   image: const AssetImage(
-                      //     'assets/images/farmLand.jpg',
-                      //   ),
-                      // ),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.white,
-                          spreadRadius: 1,
-                          blurRadius: 7,
-                          offset: Offset(-5, -5), // changes position of shadow
-                        ),
-                        BoxShadow(
-                          color: Color.fromRGBO(190, 41, 183, .4),
-                          spreadRadius: 1,
-                          blurRadius: 4,
-                          offset: Offset(5, 5), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 35.0),
-                        //* Column inside card to help in odering elements
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            //* Row having Icon and my Shamba text
-                          ],
-                        )),
+                      //! Start of Second Card
+                      InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const FeedsGraph()),
+                            );
+                          },
+                          child: const FeedsCard())
+                    ],
                   ),
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  //! Start of Third - 1 Box
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.27,
-                    width: MediaQuery.of(context).size.width * 0.40,
-                    // color: Colors.green,
-                    decoration: BoxDecoration(
-                      color: const Color.fromRGBO(7, 124, 190, 1),
-                      borderRadius: BorderRadius.circular(16),
-                      // image: DecorationImage(
-                      //   fit: BoxFit.cover,
-                      //   colorFilter: ColorFilter.mode(
-                      //       Colors.black.withOpacity(0.2), BlendMode.dstATop),
-                      //   image: const AssetImage(
-                      //     'assets/images/farmLand.jpg',
-                      //   ),
-                      // ),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.white,
-                          spreadRadius: 1,
-                          blurRadius: 7,
-                          offset: Offset(-5, -5), // changes position of shadow
-                        ),
-                        BoxShadow(
-                          color: Color.fromRGBO(11, 103, 152, .4),
-                          spreadRadius: 1,
-                          blurRadius: 4,
-                          offset: Offset(5, 5), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 35.0),
-                        //* Column inside card to help in odering elements
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            //* Row having Icon and my Shamba text
-                          ],
-                        )),
-                  ),
-                  // division
-                  const SizedBox(
-                    height: 20.0,
-                  ),
+                  Column(
+                    children: <Widget>[
+                      //! Start of Third - 1 Box
+                      InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const FeedsGraph()),
+                            );
+                          },
+                          child: const TempCard()),
+                      // division
+                      const SizedBox(
+                        height: 20.0,
+                      ),
 
-                  //! Start of Forth - 2 Card
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.30,
-                    width: MediaQuery.of(context).size.width * 0.40,
-                    // color: Colors.green,
-                    decoration: BoxDecoration(
-                      color: const Color.fromRGBO(255, 86, 33, 1),
-                      borderRadius: BorderRadius.circular(16),
-                      // image: DecorationImage(
-                      //   fit: BoxFit.cover,
-                      //   colorFilter: ColorFilter.mode(
-                      //       Colors.black.withOpacity(0.2), BlendMode.dstATop),
-                      //   image: const AssetImage(
-                      //     'assets/images/farmLand.jpg',
-                      //   ),
-                      // ),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.white,
-                          spreadRadius: 1,
-                          blurRadius: 7,
-                          offset: Offset(-5, -5), // changes position of shadow
-                        ),
-                        BoxShadow(
-                          color: Color.fromRGBO(222, 72, 31, .4),
-                          spreadRadius: 1,
-                          blurRadius: 4,
-                          offset: Offset(5, 5), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 35.0),
-                        //* Column inside card to help in odering elements
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            //* Row having Icon and my Shamba text
-                          ],
-                        )),
-                  ),
-                ],
-              )
-            ]),
+                      //! Start of Forth - 2 Card
+                      InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const FeedsGraph()),
+                            );
+                          },
+                          child: const LightsCard())
+                    ],
+                  )
+                ]),
           ]),
         ),
       ),
