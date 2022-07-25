@@ -1,3 +1,6 @@
+// Card with the Ammonia parameters and animations.
+// Present on dashboards that need details on Ammonia Levels.
+
 import 'package:flutter/material.dart';
 // import 'package:shamba_smart/pages/widgets/lineChart.dart';
 

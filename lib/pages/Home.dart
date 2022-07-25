@@ -1,11 +1,14 @@
+// Main dashboard with all parameters. 
+// It is from here that all other routes originate.
+
 import 'package:flutter/material.dart';
 import 'package:shamba_smart/pages/widgets/newNav.dart';
 import 'package:shamba_smart/pages/widgets/globalTop.dart';
 import 'package:shamba_smart/pages/widgets/globalEdit.dart';
-import 'package:shamba_smart/pages/Shamba.dart';
-import 'package:shamba_smart/pages/Kuku.dart';
-import 'package:shamba_smart/pages/Care.dart';
-import 'package:shamba_smart/pages/Sokoni.dart';
+import 'package:shamba_smart/pages/Shamba/Shamba.dart';
+import 'package:shamba_smart/pages/Kuku/Kuku.dart';
+import 'package:shamba_smart/pages/shambaCare/Care.dart';
+import 'package:shamba_smart/pages/Sokoni/Sokoni.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

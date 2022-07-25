@@ -1,3 +1,5 @@
+// This is a dashboard for all Shamba parametres, i.e Humidity, Temperature, light
+
 import 'package:flutter/material.dart';
 import 'package:shamba_smart/pages/widgets/newNav.dart';
 import 'package:shamba_smart/pages/widgets/globalTop.dart';
@@ -5,16 +7,16 @@ import 'package:shamba_smart/pages/widgets/KukuParameters/AmmoniaParamCard.dart'
 import 'package:shamba_smart/pages/widgets/KukuParameters/FeedsParamCard.dart';
 import 'package:shamba_smart/pages/widgets/KukuParameters/TempParamCard.dart';
 import 'package:shamba_smart/pages/widgets/KukuParameters/LightsParamCard.dart';
-import 'package:shamba_smart/pages/FeedsGraph.dart';
+import 'package:shamba_smart/pages/Shamba/params/FeedsGraph.dart';
 
-class Kuku extends StatefulWidget {
-  const Kuku({Key? key}) : super(key: key);
+class Shamba extends StatefulWidget {
+  const Shamba({Key? key}) : super(key: key);
 
   @override
-  State<Kuku> createState() => _KukuState();
+  State<Shamba> createState() => _ShambaState();
 }
 
-class _KukuState extends State<Kuku> {
+class _ShambaState extends State<Shamba> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +35,7 @@ class _KukuState extends State<Kuku> {
                 //Home Intro text
                 Column(
                   children: <Widget>[
-                    const Text("My Kuku",
+                    const Text("My Shamba",
                         textAlign: TextAlign.center,
                         // overflow: TextOverflow.ellipsis,
                         style: TextStyle(

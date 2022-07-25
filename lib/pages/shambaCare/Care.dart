@@ -1,3 +1,5 @@
+// This is the magonjwa detector app
+
 import 'package:flutter/material.dart';
 import 'package:shamba_smart/pages/widgets/newNav.dart';
 import 'package:shamba_smart/pages/widgets/globalTop.dart';
@@ -72,7 +74,7 @@ class _ShambaCareState extends State<ShambaCare> {
             ),
             const SizedBox(height: 30.0),
             //* Body
-            const Center(child: Text("Your Magonjwa detetor is comung soon"))
+            const Center(child: Text("Your Magonjwa detetor is coming soon"))
           ]),
         ),
       ),

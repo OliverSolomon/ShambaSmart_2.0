@@ -1,3 +1,5 @@
+// Row 2 on the application. Has Home and Edit widgets.
+
 import 'package:flutter/material.dart';
 
 class GlobalEdit extends StatefulWidget {

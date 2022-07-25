@@ -1,3 +1,5 @@
+// Simple Toggle Switch widget for override purposes
+
 import 'package:flutter/material.dart';
 
 class mySwitch extends StatefulWidget {

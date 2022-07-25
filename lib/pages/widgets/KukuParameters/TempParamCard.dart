@@ -1,3 +1,7 @@
+// Card with the Temperature parameters and animations.
+// Present on dashboards that need details on Temperature.
+
+
 import 'package:flutter/material.dart';
 // import 'package:shamba_smart/pages/widgets/lineChart.dart';
 import 'package:shamba_smart/pages/widgets/switch.dart';

@@ -1,8 +1,10 @@
+// Ammonia Parameter overview. Riute to the Ammonia card.
+
 import 'package:flutter/material.dart';
 import 'package:shamba_smart/pages/widgets/newNav.dart';
 import 'package:shamba_smart/pages/widgets/switch.dart';
 import 'package:shamba_smart/pages/widgets/graphNav.dart';
-import 'package:shamba_smart/pages/widgets/barrGraph.dart';
+// import 'package:shamba_smart/pages/widgets/barrGraph.dart';
 
 class FeedsGraph extends StatefulWidget {
   const FeedsGraph({Key? key}) : super(key: key);
@@ -62,7 +64,9 @@ class _FeedsGraphState extends State<FeedsGraph> {
                         ),
                       ],
                     ),
-                    child: AmmoniaGraph()),
+                    // child: AmmoniaGraph()
+                    child: SizedBox()
+                    ),
                 //* cards with toggles
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

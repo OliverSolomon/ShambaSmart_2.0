@@ -1,16 +1,18 @@
+// This is the marketplace
+
 import 'package:flutter/material.dart';
 import 'package:shamba_smart/pages/widgets/newNav.dart';
 import 'package:shamba_smart/pages/widgets/globalTop.dart';
 import 'package:shamba_smart/pages/widgets/globalEdit.dart';
 
-class Shamba extends StatefulWidget {
-  const Shamba({Key? key}) : super(key: key);
+class Sokoni extends StatefulWidget {
+  const Sokoni({Key? key}) : super(key: key);
 
   @override
-  State<Shamba> createState() => _ShambaState();
+  State<Sokoni> createState() => _SokoniState();
 }
 
-class _ShambaState extends State<Shamba> {
+class _SokoniState extends State<Sokoni> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +31,7 @@ class _ShambaState extends State<Shamba> {
                 //Home Intro text
                 Column(
                   children: <Widget>[
-                    const Text("My Shamba",
+                    const Text("Sokoni",
                         textAlign: TextAlign.center,
                         // overflow: TextOverflow.ellipsis,
                         style: TextStyle(

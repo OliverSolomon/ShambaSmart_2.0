@@ -1,7 +1,10 @@
+// This is the App watering hole ;) 
+// We all gather here
+
 import 'package:flutter/material.dart';
 import 'package:shamba_smart/pages/Home.dart';
-import 'package:shamba_smart/pages/Shamba.dart';
-import 'package:shamba_smart/pages/Kuku.dart';
+import 'package:shamba_smart/pages/Shamba/Shamba.dart';
+import 'package:shamba_smart/pages/Kuku/Kuku.dart';
 
 void main() {
   runApp(const MyApp());

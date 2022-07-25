@@ -1,3 +1,6 @@
+// Card with the Light parameters and animations.
+// Present on dashboards that need details on lights.
+
 import 'package:flutter/material.dart';
 // import 'package:shamba_smart/pages/widgets/lineChart.dart';
 import 'package:shamba_smart/pages/widgets/switch.dart';

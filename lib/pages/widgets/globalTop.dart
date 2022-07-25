@@ -1,3 +1,5 @@
+// Top Information Bar with Name of page and user avatar.
+
 import 'package:flutter/material.dart';
 
 class GlobalTop extends StatefulWidget {
