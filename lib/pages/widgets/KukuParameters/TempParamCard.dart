@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 // import 'package:shamba_smart/pages/widgets/lineChart.dart';
-import 'package:shamba_smart/pages/widgets/switch.dart';
+// import 'package:shamba_smart/pages/widgets/switch.dart';
 
 class TempCard extends StatefulWidget {
   const TempCard({

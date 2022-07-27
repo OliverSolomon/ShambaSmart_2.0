@@ -22,7 +22,7 @@ jobs:
           flutter-version: '3.0.5'
       - run: flutter pub get
       - run: flutter test
-      - run: flutter build apk --debug --split-per-abi
+      - run: flutter build apk --split-per-abi
       - run: |
           flutter build ios --no-codesign
           cd build/ios/iphoneos
@@ -41,6 +41,6 @@ jobs:
 
 
 
-
-# push to master, main, develop
-# pull request on main master
+# Actions are triggered on: 
+  # push to master, main
+  # pull request on main master
