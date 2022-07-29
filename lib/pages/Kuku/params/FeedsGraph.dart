@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:shamba_smart/pages/widgets/newNav.dart';
 import 'package:shamba_smart/pages/widgets/switch.dart';
 import 'package:shamba_smart/pages/widgets/graphNav.dart';
+import 'bar.dart';
+
 // import 'package:shamba_smart/pages/widgets/barrGraph.dart';
 
 class FeedsGraph extends StatefulWidget {
@@ -65,7 +67,43 @@ class _FeedsGraphState extends State<FeedsGraph> {
                       ],
                     ),
                     // child: AmmoniaGraph()
-                    child: SizedBox()
+                    child: Row(
+              // color: Colors.red;
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: const <Widget>[
+        NeumorphicBar(
+          width: 200,
+          height: 400,
+          value: 0.5,
+          text: 'Mon',
+        ),
+        NeumorphicBar(
+          width: 200,
+          height: 400,
+          value: 0.9,
+          text: 'Tue',
+          // color: Color.fromRGBO(0, 200, 156, 1),
+        ),
+        NeumorphicBar(
+          width: 200,
+          height: 400,
+          value: 0.7,
+          text: 'Wed',
+        ),
+        NeumorphicBar(
+          width: 200,
+          height: 400,
+          value: 1,
+          text: 'Thur',
+        ),
+        NeumorphicBar(
+          width: 200,
+          height: 400,
+          value: 0.2,
+          text: 'Fri',
+        ),
+      ],
+            )
                     ),
                 //* cards with toggles
                 Row(
