@@ -70,37 +70,75 @@ class _FeedsGraphState extends State<FeedsGraph> {
                     child: Row(
               // color: Colors.red;
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: const <Widget>[
-        NeumorphicBar(
+      children: <Widget>[
+        // Key for the value calibration
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 45, 0, 70),// const EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
+          child:Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children:<Widget>[
+              Text(
+                "10 -",
+                style: TextStyle(
+                  color: Colors.blueGrey[300],),),
+              Text(
+                "5 -",
+                style: TextStyle(
+                  color: Colors.blueGrey[300],),),
+              Text(
+                "0 -",
+                style: TextStyle(
+                  color: Colors.blueGrey[300],),),
+          ]
+        )),
+        const NeumorphicBar(
           width: 200,
           height: 400,
-          value: 0.5,
+          value: 0.53,
           text: 'Mon',
+          color: Color.fromRGBO(0, 200, 156, 1),
         ),
-        NeumorphicBar(
+        const NeumorphicBar(
           width: 200,
           height: 400,
-          value: 0.9,
+          value: 0.82,
           text: 'Tue',
-          // color: Color.fromRGBO(0, 200, 156, 1),
+          color: Color.fromARGB(234, 57, 182, 255),
         ),
-        NeumorphicBar(
+        const NeumorphicBar(
           width: 200,
           height: 400,
-          value: 0.7,
+          value: 0.47,
           text: 'Wed',
+          color: Color.fromRGBO(0, 200, 156, 1),
         ),
-        NeumorphicBar(
+        const NeumorphicBar(
           width: 200,
           height: 400,
-          value: 1,
+          value: .6,
           text: 'Thur',
+          color: Color.fromARGB(234, 57, 182, 255),
         ),
-        NeumorphicBar(
+        const NeumorphicBar(
+          width: 200,
+          height: 400,
+          value: 0.37,
+          text: 'Fri',
+          color: Color.fromRGBO(0, 200, 156, 1),
+        ),
+        const NeumorphicBar(
+          width: 200,
+          height: 400,
+          value: 0.69,
+          text: 'Sat',
+          color: Color.fromARGB(234, 57, 182, 255),
+        ),
+        const NeumorphicBar(
           width: 200,
           height: 400,
           value: 0.2,
-          text: 'Fri',
+          text: 'Sun',
+          color: Color.fromRGBO(0, 200, 156, 1),
         ),
       ],
             )
@@ -115,7 +153,7 @@ class _FeedsGraphState extends State<FeedsGraph> {
                           width: MediaQuery.of(context).size.width * 0.42,
                           // color: Colors.green,
                           decoration: BoxDecoration(
-                            color: Color.fromRGBO(255, 150, 255, 1),
+                            color: Color.fromRGBO(57, 182, 255, 0.918),
                             borderRadius: BorderRadius.circular(16),
                             boxShadow: const [
                               BoxShadow(
@@ -153,7 +191,7 @@ class _FeedsGraphState extends State<FeedsGraph> {
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 20,
+                                          fontSize: 17,
                                           fontWeight: FontWeight.bold,
                                         )),
                                     //* Icon
@@ -161,7 +199,7 @@ class _FeedsGraphState extends State<FeedsGraph> {
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 16,
+                                          fontSize: 14,
                                           fontWeight: FontWeight.bold,
                                         )),
                                   ],
@@ -176,20 +214,20 @@ class _FeedsGraphState extends State<FeedsGraph> {
                               //* Toggle
                               Padding(
                                 padding:
-                                    const EdgeInsets.fromLTRB(20, 0, 0, 30),
+                                    const EdgeInsets.fromLTRB(20, 0, 15, 30),
                                 child: RichText(
                                     text: const TextSpan(
-                                        text: "Daily",
+                                        text: "Daily at 8:00 am",
                                         style: TextStyle(
-                                          fontSize: 16,
+                                          fontSize: 15,
                                           fontWeight: FontWeight.w400,
                                           color: Colors.white,
                                         ),
                                         children: <TextSpan>[
                                       TextSpan(
-                                          text: " at 8:00 am",
+                                          text: " for 3 days",
                                           style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 15,
                                             color: Colors.white,
                                           ))
                                     ])),
@@ -201,7 +239,8 @@ class _FeedsGraphState extends State<FeedsGraph> {
                           width: MediaQuery.of(context).size.width * 0.42,
                           // color: Colors.green,
                           decoration: BoxDecoration(
-                            color: Color.fromRGBO(255, 151, 50, 1),
+                            color:Color.fromRGBO(0, 200, 156, 1),
+                            // color: Color.fromRGBO(241, 156, 28, 1),
                             borderRadius: BorderRadius.circular(16),
                             boxShadow: const [
                               BoxShadow(

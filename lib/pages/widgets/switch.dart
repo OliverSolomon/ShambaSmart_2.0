@@ -20,8 +20,8 @@ class _mySwitchState extends State<mySwitch> {
           print(isSwitched);
         });
       },
-      activeTrackColor: Colors.lightGreenAccent,
-      activeColor: Colors.green,
+      activeTrackColor: Color.fromARGB(255, 177, 255, 88),
+      activeColor: Color.fromARGB(255, 255, 214, 91),
     );
   }
 }
