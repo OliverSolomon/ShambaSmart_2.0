@@ -73,11 +73,13 @@ class InnerContainer extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(bottom: 5.0),
         child: Container(
-          height: height * 600 / 896,
-          width: width * 85 / 424,
+          height: height * 600 / 900,
+          width: width * 85 / 420,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(95.0),
-            color: color ?? Color.fromRGBO(235, 233, 232, 1),
+            // color: color ?? Color.fromRGBO(235, 233, 232, 1),
+            // ignore: unnecessary_null_comparison, prefer_if_null_operators
+            color: color == null ? const Color(0xFFEBE9E8) : color,
             boxShadow: [
               const BoxShadow(
                 offset: Offset(1.5, 1.5),
@@ -85,10 +87,12 @@ class InnerContainer extends StatelessWidget {
                 blurRadius: 2,
               ),
               BoxShadow(
-                offset: const Offset(-1.5, -1.5),
+                offset: const Offset(-1, -1),
                 color:
-                    color.withOpacity(0.95) ?? Colors.white.withOpacity(0.85),
-                blurRadius: .8,
+                    // ignore: unnecessary_null_comparison
+                    color.withOpacity(0.95) == null ? Colors.white.withOpacity(0.85): color,
+                    // color.withOpacity(0.95) ?? Colors.white.withOpacity(0.85),
+                blurRadius: .6,
               )
             ],
           ),
