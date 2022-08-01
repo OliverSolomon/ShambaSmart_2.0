@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class NeumorphicBar extends StatelessWidget {
   const NeumorphicBar({
-    Key? key,
+    Key ? key,
     required this.width,
     required this.height,
     required this.value,
     required this.text,
-    // required this.color,
+    required this.color,
   }) : super(key: key);
 
   final num width;
@@ -17,18 +17,18 @@ class NeumorphicBar extends StatelessWidget {
   final num value;
 
   final String text;
-  // final Color color;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
-    final innerContainerWidth = width * 0.95;
+    final innerContainerWidth = width * 0.9;
     final innerContainerHeight = height * value * 0.96;
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         Container(
-          height: height * 1.01,
-          width: width.toDouble() / 4,
+          height: height * .6,
+          width: width.toDouble() / 10,
           child: Stack(
             children: <Widget>[
               DugContainer(
@@ -38,7 +38,7 @@ class NeumorphicBar extends StatelessWidget {
               InnerContainer(
                   width: innerContainerWidth,
                   height: innerContainerHeight,
-                  color: Colors.green),
+                  color: color),
             ],
           ),
         ),
@@ -73,23 +73,28 @@ class InnerContainer extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(bottom: 5.0),
         child: Container(
-          height: height * 600 / 896,
-          width: width * 85 / 414,
+          height: height * 600 / 900,
+          width: width * 85 / 420,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(95.0),
-            color: const Color.fromRGBO(235, 233, 232, 1),
+            // color: color ?? Color.fromRGBO(235, 233, 232, 1),
+            // ignore: unnecessary_null_comparison, prefer_if_null_operators
+            color: color == null ? const Color(0xFFEBE9E8) : color,
             boxShadow: [
               const BoxShadow(
                 offset: Offset(1.5, 1.5),
-                color: Colors.black38,
+                color: Color.fromARGB(68, 0, 0, 0),
                 blurRadius: 2,
               ),
               BoxShadow(
-                offset: const Offset(-1.5, -1.5),
-                color:Colors.white.withOpacity(0.85),
-                blurRadius: 2,
+                offset: const Offset(-1, -1),
+                color:
+                    // ignore: unnecessary_null_comparison
+                    color.withOpacity(0.95) == null ? Colors.white.withOpacity(0.85): color,
+                    // color.withOpacity(0.95) ?? Colors.white.withOpacity(0.85),
+                blurRadius: .6,
               )
-            ],  
+            ],
           ),
         ),
       ),
@@ -121,8 +126,8 @@ class DugContainer extends StatelessWidget {
             BoxShadow(
               color: interiorShadow,
               offset: Offset(0.0, 0.0),
-              spreadRadius: -1.0,
-              blurRadius: 11.0,
+              spreadRadius: -3.0,
+              blurRadius: 1.0,
             ),
           ],
           borderRadius: BorderRadius.circular(100.0),

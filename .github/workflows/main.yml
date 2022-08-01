@@ -43,4 +43,6 @@ jobs:
 
 # Actions are triggered on: 
   # push to master, main
+
+# Removed pull request workflow due to versioning.
   # pull request on main master
