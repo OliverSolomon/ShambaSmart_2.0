@@ -16,8 +16,33 @@ class FeedsGraph extends StatefulWidget {
 }
 
 class _FeedsGraphState extends State<FeedsGraph> {
+  DateTimeRange dateRange = DateTimeRange(
+    start:DateTime.now(),
+    end: DateTime.now()
+    );
+
+    // create TimeOfDay variable
+    TimeOfDay _timeOfDay = const TimeOfDay(hour: 2, minute: 42);
+    // show time picker method
+    void _showTimePicker() {
+      showTimePicker(
+        context: context,
+        initialTime: TimeOfDay.now(),
+        ).then((value) {
+          setState(() {
+            _timeOfDay = value!;
+            });
+          });
+  }
+
   @override
   Widget build(BuildContext context) {
+
+  final start = dateRange.start;
+  final end = dateRange.end;
+  final difference = dateRange.duration;
+
+
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
@@ -153,7 +178,7 @@ class _FeedsGraphState extends State<FeedsGraph> {
                           width: MediaQuery.of(context).size.width * 0.42,
                           // color: Colors.green,
                           decoration: BoxDecoration(
-                            color: Color.fromRGBO(57, 182, 255, 0.918),
+                            color: const Color(0xEA39B6FF),
                             borderRadius: BorderRadius.circular(16),
                             boxShadow: const [
                               BoxShadow(
@@ -174,14 +199,14 @@ class _FeedsGraphState extends State<FeedsGraph> {
                           ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
                               // Line(),
                               //* Row having Parameter and Parameter Icon
                               Padding(
                                 padding:
                                     // const EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
-                                    const EdgeInsets.fromLTRB(20, 30, 20, 0),
+                                    const EdgeInsets.fromLTRB(20, 10, 30, 0),
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -206,27 +231,37 @@ class _FeedsGraphState extends State<FeedsGraph> {
                                 ),
                               ),
                               //* Actions and Notifications
-                              const Padding(
-                                padding: EdgeInsets.fromLTRB(20, 0, 0, 20),
-                                child: Icon(Icons.calendar_month_outlined,
-                                    size: 30.0, color: Colors.white),
-                              ),
+                              Row(
+                                  mainAxisAlignment:MainAxisAlignment.spaceAround,
+                                  children: <Widget> [
+                                    IconButton(
+                                      icon: const Icon(Icons.calendar_month_outlined),
+                                      iconSize: 30.0,
+                                      color: Colors.white,
+                                      onPressed: pickDateRange,),
+                                    IconButton(
+                                      icon: const Icon(Icons.watch_later_outlined),
+                                      iconSize: 30.0,
+                                      color: Colors.white,
+                                      onPressed: _showTimePicker,)
+                                      ],
+                                ),
                               //* Toggle
                               Padding(
                                 padding:
-                                    const EdgeInsets.fromLTRB(20, 0, 15, 30),
+                                    const EdgeInsets.fromLTRB(20, 0, 15, 0),
                                 child: RichText(
-                                    text: const TextSpan(
-                                        text: "Daily at 8:00 am",
-                                        style: TextStyle(
+                                    text: TextSpan(
+                                        text: "Daily at  ${_timeOfDay.format(context)}",
+                                        style: const TextStyle(
                                           fontSize: 15,
                                           fontWeight: FontWeight.w400,
                                           color: Colors.white,
                                         ),
                                         children: <TextSpan>[
                                       TextSpan(
-                                          text: " for 3 days",
-                                          style: TextStyle(
+                                          text: " for ${difference.inDays} days",
+                                          style: const TextStyle(
                                             fontSize: 15,
                                             color: Colors.white,
                                           ))
@@ -306,5 +341,20 @@ class _FeedsGraphState extends State<FeedsGraph> {
       ),
       bottomNavigationBar: const Nav(),
     );
+    }
+  Future pickDateRange() async {
+    DateTimeRange? newDateRange = await showDateRangePicker(
+      context: context, 
+      initialDateRange: dateRange,
+      firstDate: DateTime(2022), 
+      lastDate: DateTime(2100)
+      );
+
+      if  (newDateRange == null) return;
+
+      setState(() {
+        dateRange = newDateRange;
+      });
   }
+
 }
