@@ -1,27 +1,26 @@
 // Card with the Temperature parameters and animations.
 // Present on dashboards that need details on Temperature.
 
-
 import 'package:flutter/material.dart';
 // import 'package:shamba_smart/pages/widgets/lineChart.dart';
 // import 'package:shamba_smart/pages/widgets/switch.dart';
 
-class TempCard extends StatelessWidget {
-  const TempCard({
+class SoilTempCard extends StatelessWidget {
+  const SoilTempCard({
     Key? key,
     required this.nameOfCard,
     required this.nameOfCard2,
     required this.iconOfCard,
-    required this.valueOfParamT,
-    required this.valueOfParamH,
+    required this.valueOfParam,
+    required this.animOfParam,
     required this.statusOfParam,
   }) : super(key: key);
 
   final String nameOfCard;
   final String nameOfCard2;
   final String iconOfCard;
-  final String valueOfParamT;
-  final String valueOfParamH;
+  final String valueOfParam;
+  final String animOfParam;
   final String statusOfParam;
 
   @override
@@ -67,14 +66,13 @@ class TempCard extends StatelessWidget {
                   children: <Widget>[
                     Text(
                       nameOfCard,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          // fontWeight: FontWeight.bold,
-                        )),
-                    Text(
-                      nameOfCard2,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        // fontWeight: FontWeight.bold,
+                      )),
+                    Text(nameOfCard2,
                         textAlign: TextAlign.center,
                         style: const TextStyle(
                           color: Colors.white,
@@ -99,21 +97,17 @@ class TempCard extends StatelessWidget {
               children: <Widget>[
                 //* text
                 Text(
-                  valueOfParamT,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                      // fontWeight: FontWeight.bold,
-                    )),
-                //* Icon
-                Text(
-                  valueOfParamH,
+                  valueOfParam,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     color: Colors.white,
-                    fontSize: 18,
-                    )),
+                    fontSize: 35,
+                    fontWeight: FontWeight.w300,
+                  )),
+
+                const SizedBox(height:15.0),
+                //* Icon
+                Image.asset(animOfParam),
               ],
             ),
           ),

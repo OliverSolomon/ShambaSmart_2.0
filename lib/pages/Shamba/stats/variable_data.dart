@@ -1,3 +1,6 @@
+// This is a file for playing around with the code.
+
+
 //* variable values in the code.
 
 String humidityCard = "Soil Moisture";

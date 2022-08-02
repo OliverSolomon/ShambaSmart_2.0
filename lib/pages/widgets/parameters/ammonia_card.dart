@@ -4,22 +4,22 @@
 import 'package:flutter/material.dart';
 // import 'package:shamba_smart/pages/widgets/lineChart.dart';
 
-class AmmoniaCard extends StatefulWidget {
+class AmmoniaCard extends StatelessWidget {
   const AmmoniaCard({
     Key? key,
+    required this.nameOfCard,
+    required this.iconOfCard,
+    required this.valueOfParam,
+    required this.statusOfParam,
+    
   }) : super(key: key);
 
-  @override
-  State<AmmoniaCard> createState() => _AmmoniaCardState();
-}
+  final String nameOfCard;
+  final String iconOfCard;
+  final String valueOfParam;
+  final String statusOfParam;
 
-class _AmmoniaCardState extends State<AmmoniaCard> {
-  
   //! values for variables
-  String nameOfCard = "Ammonia";
-  String iconOfCard = "assets/icons/Humidity.png";
-  String valueOfParam = '48 %';
-  String statusOfParam = " Normal";
 
   @override
   Widget build(BuildContext context) {

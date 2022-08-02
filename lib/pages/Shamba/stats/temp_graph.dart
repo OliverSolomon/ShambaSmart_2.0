@@ -8,14 +8,14 @@ import 'package:shamba_smart/pages/widgets/bar.dart';
 
 // import 'package:shamba_smart/pages/widgets/barrGraph.dart';
 
-class FeedsGraph extends StatefulWidget {
-  const FeedsGraph({Key? key}) : super(key: key);
+class TempGraph extends StatefulWidget {
+  const TempGraph({Key? key}) : super(key: key);
 
   @override
-  State<FeedsGraph> createState() => _FeedsGraphState();
+  State<TempGraph> createState() => _TempGraphState();
 }
 
-class _FeedsGraphState extends State<FeedsGraph> {
+class _TempGraphState extends State<TempGraph> {
   DateTimeRange dateRange = DateTimeRange(
     start:DateTime.now(),
     end: DateTime.now()
@@ -33,13 +33,25 @@ class _FeedsGraphState extends State<FeedsGraph> {
             _timeOfDay = value!;
             });
           });
+
   }
 
+
+  String statName = "Temperature & Humidity";
+  double monValue = 0.50;
+  double tueValue = 0.28;
+  double wedValue = 0.87;
+  double thurValue = 0.60;
+  double friValue = 0.38;
+  double satValue = 0.45;
+  double sunValue = 0.10;
+
   @override
+
   Widget build(BuildContext context) {
 
-  final start = dateRange.start;
-  final end = dateRange.end;
+  // final start = dateRange.start;
+  // final end = dateRange.end;
   final difference = dateRange.duration;
 
 
@@ -48,9 +60,9 @@ class _FeedsGraphState extends State<FeedsGraph> {
       appBar: AppBar(
           centerTitle: true,
           elevation: 0.0,
-          title: const Text(
-            "Ammonia",
-            style: TextStyle(color: Color.fromRGBO(255, 86, 33, 1)),
+          title: Text(
+            statName,
+            style: const TextStyle(color: Color.fromRGBO(255, 86, 33, 1)),
           ),
           backgroundColor: Colors.grey[300],
           leading: IconButton(
@@ -116,52 +128,52 @@ class _FeedsGraphState extends State<FeedsGraph> {
                   color: Colors.blueGrey[300],),),
           ]
         )),
-        const NeumorphicBar(
+        NeumorphicBar(
           width: 200,
           height: 400,
-          value: 0.53,
+          value: monValue,
           text: 'Mon',
           color: Color.fromRGBO(0, 200, 156, 1),
         ),
-        const NeumorphicBar(
+        NeumorphicBar(
           width: 200,
           height: 400,
-          value: 0.82,
+          value: tueValue,
           text: 'Tue',
           color: Color.fromARGB(234, 57, 182, 255),
         ),
-        const NeumorphicBar(
+        NeumorphicBar(
           width: 200,
           height: 400,
-          value: 0.47,
+          value: wedValue,
           text: 'Wed',
           color: Color.fromRGBO(0, 200, 156, 1),
         ),
-        const NeumorphicBar(
+        NeumorphicBar(
           width: 200,
           height: 400,
-          value: .6,
+          value: thurValue,
           text: 'Thur',
           color: Color.fromARGB(234, 57, 182, 255),
         ),
-        const NeumorphicBar(
+        NeumorphicBar(
           width: 200,
           height: 400,
-          value: 0.37,
+          value: friValue,
           text: 'Fri',
           color: Color.fromRGBO(0, 200, 156, 1),
         ),
-        const NeumorphicBar(
+        NeumorphicBar(
           width: 200,
           height: 400,
-          value: 0.69,
+          value: satValue,
           text: 'Sat',
           color: Color.fromARGB(234, 57, 182, 255),
         ),
-        const NeumorphicBar(
+        NeumorphicBar(
           width: 200,
           height: 400,
-          value: 0.2,
+          value: sunValue,
           text: 'Sun',
           color: Color.fromRGBO(0, 200, 156, 1),
         ),

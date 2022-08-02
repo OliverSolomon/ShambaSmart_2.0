@@ -1,48 +1,58 @@
-// Ammonia Parameter overview. Riute to the Ammonia card.
+// Moisture Parameter overview. Riute to the Moisture card.
 
 import 'package:flutter/material.dart';
 import 'package:shamba_smart/pages/widgets/new_nav.dart';
 import 'package:shamba_smart/pages/widgets/switch.dart';
 import 'package:shamba_smart/pages/widgets/graph_nav.dart';
 import 'package:shamba_smart/pages/widgets/bar.dart';
-import 'variable_data.dart';
 
+// import 'package:shamba_smart/pages/widgets/barrGraph.dart';
 
-
-class FeedsGraph extends StatefulWidget {
-  const FeedsGraph({Key? key}) : super(key: key);
+class MoistureGraph extends StatefulWidget {
+  const MoistureGraph({Key? key}) : super(key: key);
 
   @override
-  State<FeedsGraph> createState() => _FeedsGraphState();
+  State<MoistureGraph> createState() => _MoistureGraphState();
 }
 
-class _FeedsGraphState extends State<FeedsGraph> {
-
-  //Date Range Picker
+class _MoistureGraphState extends State<MoistureGraph> {
   DateTimeRange dateRange = DateTimeRange(
     start:DateTime.now(),
     end: DateTime.now()
-  );
+    );
 
-  // create TimeOfDay variable
-  TimeOfDay _timeOfDay = const TimeOfDay(hour: 2, minute: 42);
-  //* show time picker method
-  void _showTimePicker() {
-    showTimePicker(
-      context: context,
-      initialTime: TimeOfDay.now(),
-      ).then((value) {
-        setState(() {
-          _timeOfDay = value!;
+    // create TimeOfDay variable
+    TimeOfDay _timeOfDay = const TimeOfDay(hour: 2, minute: 42);
+    // show time picker method
+    void _showTimePicker() {
+      showTimePicker(
+        context: context,
+        initialTime: TimeOfDay.now(),
+        ).then((value) {
+          setState(() {
+            _timeOfDay = value!;
+            });
           });
-      });
+
   }
 
+
+  String statName = "Soil Moisture";
+  double monValue = 0.13;
+  double tueValue = 0.42;
+  double wedValue = 0.27;
+  double thurValue = 0.80;
+  double friValue = 0.68;
+  double satValue = 0.759;
+  double sunValue = 0.20;
+
   @override
+
   Widget build(BuildContext context) {
 
-    //* finding difference of picked dates
-    final difference = dateRange.duration;
+  // final start = dateRange.start;
+  // final end = dateRange.end;
+  final difference = dateRange.duration;
 
 
     return Scaffold(
@@ -51,7 +61,7 @@ class _FeedsGraphState extends State<FeedsGraph> {
           centerTitle: true,
           elevation: 0.0,
           title: Text(
-            humidityCard,
+            statName,
             style: const TextStyle(color: Color.fromRGBO(255, 86, 33, 1)),
           ),
           backgroundColor: Colors.grey[300],
@@ -93,7 +103,7 @@ class _FeedsGraphState extends State<FeedsGraph> {
                         ),
                       ],
                     ),
-                    // child: AmmoniaGraph()
+                    // child: MoistureGraph()
                     child: Row(
               // color: Colors.red;
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -118,52 +128,52 @@ class _FeedsGraphState extends State<FeedsGraph> {
                   color: Colors.blueGrey[300],),),
           ]
         )),
-        const NeumorphicBar(
+        NeumorphicBar(
           width: 200,
           height: 400,
-          value: 0.53,
+          value: monValue,
           text: 'Mon',
           color: Color.fromRGBO(0, 200, 156, 1),
         ),
-        const NeumorphicBar(
+        NeumorphicBar(
           width: 200,
           height: 400,
-          value: 0.82,
+          value: tueValue,
           text: 'Tue',
           color: Color.fromARGB(234, 57, 182, 255),
         ),
-        const NeumorphicBar(
+        NeumorphicBar(
           width: 200,
           height: 400,
-          value: 0.47,
+          value: wedValue,
           text: 'Wed',
           color: Color.fromRGBO(0, 200, 156, 1),
         ),
-        const NeumorphicBar(
+        NeumorphicBar(
           width: 200,
           height: 400,
-          value: .6,
+          value: thurValue,
           text: 'Thur',
           color: Color.fromARGB(234, 57, 182, 255),
         ),
-        const NeumorphicBar(
+        NeumorphicBar(
           width: 200,
           height: 400,
-          value: 0.37,
+          value: friValue,
           text: 'Fri',
           color: Color.fromRGBO(0, 200, 156, 1),
         ),
-        const NeumorphicBar(
+        NeumorphicBar(
           width: 200,
           height: 400,
-          value: 0.69,
+          value: satValue,
           text: 'Sat',
           color: Color.fromARGB(234, 57, 182, 255),
         ),
-        const NeumorphicBar(
+        NeumorphicBar(
           width: 200,
           height: 400,
-          value: 0.2,
+          value: sunValue,
           text: 'Sun',
           color: Color.fromRGBO(0, 200, 156, 1),
         ),

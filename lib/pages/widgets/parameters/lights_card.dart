@@ -1,34 +1,24 @@
-// Card with the Light parameters and animations.
-// Present on dashboards that need details on lights.
-
 import 'package:flutter/material.dart';
 import 'package:shamba_smart/pages/widgets/switch.dart';
 
-class LightsCard extends StatefulWidget {
-
- 
-
-   const LightsCard({
+class LightsCard extends StatelessWidget {
+  const LightsCard({
     Key? key,
-    // required this.nameOfCard, 
-    // required this.iconOfCard, 
-    // required this.valueOfParam, 
-    // required this.statusOfParam
+    required this.nameOfCard,
+    required this.iconOfCard,
+    required this.valueOfParam,
+    required this.statusOfParam,
+    // required this.color,
   }) : super(key: key);
 
-  @override
-  State<LightsCard> createState() => _LightsCardState();
-}
+  final String nameOfCard;
+  final String iconOfCard;
+  final String valueOfParam;
+  final String statusOfParam;
+  // final Color color;
 
-class _LightsCardState extends State<LightsCard> {
 
-  String nameOfCard = "Light";
-  String iconOfCard = "assets/icons/lights.png";
-  String valueOfParam = '67 %';
-  String statusOfParam = "Off";
-  
   @override
-  
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.30,

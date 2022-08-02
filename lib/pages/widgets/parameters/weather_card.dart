@@ -1,23 +1,25 @@
-// Card with the Feeds parameters and animations.
-// Present on dashboards that need details on feeds.
+// Card with the Weather parameters and animations.
+// Present on dashboards that need details on Weather.
 
 import 'package:flutter/material.dart';
-// import 'package:shamba_smart/pages/widgets/lineChart.dart';
-import 'package:shamba_smart/pages/widgets/switch.dart';
+
 
 // ignore: must_be_immutable
-class FeedsCard extends StatelessWidget {
-  const FeedsCard({
+class WeatherCard extends StatelessWidget {
+  const WeatherCard({
     Key? key,
     required this.nameOfCard,
+    required this.nameOfCard2,
     required this.iconOfCard,
     required this.statusOfParam,
+    required this.valueOfParam,
   }) : super(key: key);
 
   final String nameOfCard;
+  final String nameOfCard2;
   final String iconOfCard;
-  // final String valueOfParam;
   final String statusOfParam;
+  final String valueOfParam;
 
     
   //! values for variables
@@ -58,14 +60,25 @@ class FeedsCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 //* text
-                Text(
-                  nameOfCard,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      // fontWeight: FontWeight.bold,
-                    )),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(nameOfCard,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          // fontWeight: FontWeight.bold,
+                        )),
+                    Text(nameOfCard2,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          // fontWeight: FontWeight.bold,
+                        )),
+                  ],
+                ),
                 //* Icon
                 Image.asset(iconOfCard)
               ],
@@ -81,32 +94,27 @@ class FeedsCard extends StatelessWidget {
               children: <Widget>[
                 //* text
                 Text(
-                  statusOfParam,
+                  valueOfParam,
                     textAlign: TextAlign.center,
                     style: const TextStyle(
                       color: Colors.white,
-                      fontSize: 12,
-                      // fontWeight: FontWeight.bold,
+                      fontSize: 40,
+                      fontWeight: FontWeight.w300,
                     )),
-                //* Icon
-                const Icon(
-                  Icons.access_time,
-                  color: Colors.white,
-                ),
               ],
             ),
           ),
-          //* Toggle
+          //* Status of Weather Param
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 30, 30, 30),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                mySwitch(),
                 //* text
-                const Text('Off',
+                Text(
+                  statusOfParam,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       // fontWeight: FontWeight.bold,

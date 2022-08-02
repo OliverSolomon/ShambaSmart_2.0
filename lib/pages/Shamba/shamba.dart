@@ -4,10 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:shamba_smart/pages/widgets/new_nav.dart';
 import 'package:shamba_smart/pages/widgets/global_top.dart';
 import 'package:shamba_smart/pages/widgets/parameters/ammonia_card.dart';
-import 'package:shamba_smart/pages/widgets/parameters/feeds_card.dart';
-import 'package:shamba_smart/pages/widgets/parameters/temp_card.dart';
-import 'package:shamba_smart/pages/widgets/parameters/lights_card.dart';
-import 'package:shamba_smart/pages/Shamba/stats/shamba_graph.dart';
+import 'package:shamba_smart/pages/widgets/parameters/weather_card.dart';
+import 'package:shamba_smart/pages/widgets/parameters/soilTemp_card.dart';
+import 'package:shamba_smart/pages/widgets/parameters/airMoisture_card.dart';
+import 'package:shamba_smart/pages/Shamba/stats/moisture_graph.dart';
+import 'package:shamba_smart/pages/Shamba/stats/temp_graph.dart';
+import 'package:shamba_smart/pages/Shamba/stats/weatherPred_graph.dart';
+import 'package:shamba_smart/pages/Shamba/stats/airHum_graph.dart';
 
 class Shamba extends StatefulWidget {
   const Shamba({Key? key}) : super(key: key);
@@ -90,10 +93,14 @@ class _ShambaState extends State<Shamba> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const FeedsGraph()),
+                                  builder: (context) => const MoistureGraph()),
                             );
                           },
-                          child: const AmmoniaCard()),
+                          child: const AmmoniaCard(
+                            nameOfCard: "Soil Moisture", 
+                            valueOfParam: "48 %", 
+                            iconOfCard: "assets/icons/Humidity.png", 
+                            statusOfParam: "Normal")),
                       // division
                       const SizedBox(
                         height: 20.0,
@@ -105,10 +112,16 @@ class _ShambaState extends State<Shamba> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const FeedsGraph()),
+                                  builder: (context) => const WeatherPredctionsGraph()),
                             );
                           },
-                          child: const FeedsCard())
+                          child: const WeatherCard(
+                            nameOfCard: "Weather", 
+                            nameOfCard2: "Predictions", 
+                            iconOfCard: "assets/icons/weather.png", 
+                            statusOfParam: "Windy",
+                            valueOfParam: "21°C"
+                            ))
                     ],
                   ),
                   Column(
@@ -119,10 +132,16 @@ class _ShambaState extends State<Shamba> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const FeedsGraph()),
+                                  builder: (context) => const TempGraph()),
                             );
                           },
-                          child: const TempCard()),
+                          child: const SoilTempCard(
+                            nameOfCard: "Soil", 
+                            nameOfCard2: "Temperature", 
+                            iconOfCard: "assets/icons/temp.png", 
+                            valueOfParam: "24 °C",
+                            statusOfParam: "Normal", 
+                            animOfParam: "assets/icons/dragBar.png",)),
                       // division
                       const SizedBox(
                         height: 20.0,
@@ -134,10 +153,15 @@ class _ShambaState extends State<Shamba> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const FeedsGraph()),
+                                  builder: (context) => const AirHumGraph()),
                             );
                           },
-                          child: LightsCard(), )
+                          child: const airMoistureCard(
+                            nameOfCard: "Air humidity", 
+                            valueOfParam: "67 %", 
+                            iconOfCard: "assets/icons/moisture.png", 
+                            // statusOfParam: "Off"
+                            ), )
                           // LightsCard("Light", "assets/icons/lights.png", "67 %", "Off"))
                     ],
                   )
