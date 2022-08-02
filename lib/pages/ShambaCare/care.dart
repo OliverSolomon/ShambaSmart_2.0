@@ -1,9 +1,9 @@
 // This is the magonjwa detector app
 
 import 'package:flutter/material.dart';
-import 'package:shamba_smart/pages/widgets/newNav.dart';
-import 'package:shamba_smart/pages/widgets/globalTop.dart';
-import 'package:shamba_smart/pages/widgets/globalEdit.dart';
+import 'package:shamba_smart/pages/widgets/new_nav.dart';
+import 'package:shamba_smart/pages/widgets/global_top.dart';
+// import 'package:shamba_smart/pages/widgets/globalEdit.dart';
 
 class ShambaCare extends StatefulWidget {
   const ShambaCare({Key? key}) : super(key: key);

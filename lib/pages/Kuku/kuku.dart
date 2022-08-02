@@ -1,22 +1,22 @@
-// This is a dashboard for all Shamba parametres, i.e Humidity, Temperature, light
+// This is a dashboard for all Kuku coop parametres, i.e Humidity, Temperature, light, feeds
 
 import 'package:flutter/material.dart';
-import 'package:shamba_smart/pages/widgets/newNav.dart';
-import 'package:shamba_smart/pages/widgets/globalTop.dart';
-import 'package:shamba_smart/pages/widgets/KukuParameters/AmmoniaParamCard.dart';
-import 'package:shamba_smart/pages/widgets/KukuParameters/FeedsParamCard.dart';
-import 'package:shamba_smart/pages/widgets/KukuParameters/TempParamCard.dart';
-import 'package:shamba_smart/pages/widgets/KukuParameters/LightsParamCard.dart';
-import 'package:shamba_smart/pages/Shamba/params/FeedsGraph.dart';
+import 'package:shamba_smart/pages/widgets/new_nav.dart';
+import 'package:shamba_smart/pages/widgets/global_top.dart';
+import 'package:shamba_smart/pages/widgets/parameters/ammonia_card.dart';
+import 'package:shamba_smart/pages/widgets/parameters/feeds_card.dart';
+import 'package:shamba_smart/pages/widgets/parameters/temp_card.dart';
+import 'package:shamba_smart/pages/widgets/parameters/lights_card.dart';
+import 'package:shamba_smart/pages/Kuku/stats/kuku_graph.dart';
 
-class Shamba extends StatefulWidget {
-  const Shamba({Key? key}) : super(key: key);
+class Kuku extends StatefulWidget {
+  const Kuku({Key? key}) : super(key: key);
 
   @override
-  State<Shamba> createState() => _ShambaState();
+  State<Kuku> createState() => _KukuState();
 }
 
-class _ShambaState extends State<Shamba> {
+class _KukuState extends State<Kuku> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +35,7 @@ class _ShambaState extends State<Shamba> {
                 //Home Intro text
                 Column(
                   children: <Widget>[
-                    const Text("My Shamba",
+                    const Text("My Kuku",
                         textAlign: TextAlign.center,
                         // overflow: TextOverflow.ellipsis,
                         style: TextStyle(

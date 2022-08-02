@@ -1,22 +1,22 @@
-// This is a dashboard for all Kuku coop parametres, i.e Humidity, Temperature, light, feeds
+// This is a dashboard for all Shamba parametres, i.e Humidity, Temperature, light
 
 import 'package:flutter/material.dart';
-import 'package:shamba_smart/pages/widgets/newNav.dart';
-import 'package:shamba_smart/pages/widgets/globalTop.dart';
-import 'package:shamba_smart/pages/widgets/KukuParameters/AmmoniaParamCard.dart';
-import 'package:shamba_smart/pages/widgets/KukuParameters/FeedsParamCard.dart';
-import 'package:shamba_smart/pages/widgets/KukuParameters/TempParamCard.dart';
-import 'package:shamba_smart/pages/widgets/KukuParameters/LightsParamCard.dart';
-import 'package:shamba_smart/pages/Kuku/params/FeedsGraph.dart';
+import 'package:shamba_smart/pages/widgets/new_nav.dart';
+import 'package:shamba_smart/pages/widgets/global_top.dart';
+import 'package:shamba_smart/pages/widgets/parameters/ammonia_card.dart';
+import 'package:shamba_smart/pages/widgets/parameters/feeds_card.dart';
+import 'package:shamba_smart/pages/widgets/parameters/temp_card.dart';
+import 'package:shamba_smart/pages/widgets/parameters/lights_card.dart';
+import 'package:shamba_smart/pages/Shamba/stats/shamba_graph.dart';
 
-class Kuku extends StatefulWidget {
-  const Kuku({Key? key}) : super(key: key);
+class Shamba extends StatefulWidget {
+  const Shamba({Key? key}) : super(key: key);
 
   @override
-  State<Kuku> createState() => _KukuState();
+  State<Shamba> createState() => _ShambaState();
 }
 
-class _KukuState extends State<Kuku> {
+class _ShambaState extends State<Shamba> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +35,7 @@ class _KukuState extends State<Kuku> {
                 //Home Intro text
                 Column(
                   children: <Widget>[
-                    const Text("My Kuku",
+                    const Text("My Shamba",
                         textAlign: TextAlign.center,
                         // overflow: TextOverflow.ellipsis,
                         style: TextStyle(
@@ -137,7 +137,8 @@ class _KukuState extends State<Kuku> {
                                   builder: (context) => const FeedsGraph()),
                             );
                           },
-                          child: const LightsCard())
+                          child: LightsCard(), )
+                          // LightsCard("Light", "assets/icons/lights.png", "67 %", "Off"))
                     ],
                   )
                 ]),

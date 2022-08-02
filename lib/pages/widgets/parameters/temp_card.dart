@@ -16,6 +16,16 @@ class TempCard extends StatefulWidget {
 }
 
 class _TempCardState extends State<TempCard> {
+
+  //! values for variables
+  String nameOfCard = "Temperature";
+  String nameOfCard2 = " & Humidity";
+  String iconOfCard = "assets/icons/temp.png";
+  String valueOfParamT = "24 °C";
+  String valueOfParamH = "67 %";
+  String statusOfParam = "Normal";
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -56,17 +66,19 @@ class _TempCardState extends State<TempCard> {
                 //* text
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const <Widget>[
-                    Text('Temparature',
+                  children: <Widget>[
+                    Text(
+                      nameOfCard,
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
                           // fontWeight: FontWeight.bold,
                         )),
-                    Text(' & Humidity',
+                    Text(
+                      nameOfCard2,
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
                           // fontWeight: FontWeight.bold,
@@ -74,7 +86,7 @@ class _TempCardState extends State<TempCard> {
                   ],
                 ),
                 //* Icon
-                Image.asset('assets/icons/temp.png')
+                Image.asset(iconOfCard)
               ],
             ),
           ),
@@ -86,22 +98,23 @@ class _TempCardState extends State<TempCard> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const <Widget>[
+              children: <Widget>[
                 //* text
-                Text('24 °C',
+                Text(
+                  valueOfParamT,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 30,
                       // fontWeight: FontWeight.bold,
                     )),
                 //* Icon
-                Text('67%',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      // fontWeight: FontWeight.bold,
+                Text(
+                  valueOfParamH,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
                     )),
               ],
             ),
@@ -110,17 +123,17 @@ class _TempCardState extends State<TempCard> {
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 0, 0, 30),
             child: RichText(
-                text: const TextSpan(
+                text: TextSpan(
                     text: "Level: ",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                       color: Colors.white,
                     ),
                     children: <TextSpan>[
                   TextSpan(
-                      text: " Normal",
-                      style: TextStyle(
+                      text: statusOfParam,
+                      style: const TextStyle(
                         fontSize: 16,
                         color: Colors.white,
                       ))

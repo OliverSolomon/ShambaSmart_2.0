@@ -2,13 +2,13 @@
 // It is from here that all other routes originate.
 
 import 'package:flutter/material.dart';
-import 'package:shamba_smart/pages/widgets/newNav.dart';
-import 'package:shamba_smart/pages/widgets/globalTop.dart';
-import 'package:shamba_smart/pages/widgets/globalEdit.dart';
-import 'package:shamba_smart/pages/Shamba/Shamba.dart';
-import 'package:shamba_smart/pages/Kuku/Kuku.dart';
-import 'package:shamba_smart/pages/shambaCare/Care.dart';
-import 'package:shamba_smart/pages/Sokoni/Sokoni.dart';
+import 'package:shamba_smart/pages/widgets/new_nav.dart';
+import 'package:shamba_smart/pages/widgets/global_top.dart';
+import 'package:shamba_smart/pages/widgets/global_edit.dart';
+import 'package:shamba_smart/pages/Shamba/shamba.dart';
+import 'package:shamba_smart/pages/Kuku/kuku.dart';
+import 'package:shamba_smart/pages/ShambaCare/care.dart';
+import 'package:shamba_smart/pages/Sokoni/sokoni.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

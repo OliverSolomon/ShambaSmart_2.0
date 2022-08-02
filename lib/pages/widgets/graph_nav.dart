@@ -2,10 +2,10 @@
 // Has Green Navigation Part as well as Name of the Graph page.
 
 import 'package:flutter/material.dart';
-import 'package:shamba_smart/pages/Shamba/Shamba.dart';
-import 'package:shamba_smart/pages/Kuku/Kuku.dart';
-import 'package:shamba_smart/pages/shambaCare/Care.dart';
-import 'package:shamba_smart/pages/Sokoni/Sokoni.dart';
+import 'package:shamba_smart/pages/Shamba/shamba.dart';
+import 'package:shamba_smart/pages/Kuku/kuku.dart';
+import 'package:shamba_smart/pages/ShambaCare/care.dart';
+import 'package:shamba_smart/pages/Sokoni/sokoni.dart';
 // import 'package:shamba_smart/pages/Home.dart';
 
 class GraphNav extends StatefulWidget {
@@ -34,7 +34,7 @@ class _GraphNavState extends State<GraphNav> {
         width: MediaQuery.of(context).size.width * 0.90,
         // color: Colors.green,
         decoration: BoxDecoration(
-          color: Color.fromRGBO(97, 214, 168, 1),
+          color: const Color.fromRGBO(97, 214, 168, 1),
           borderRadius: BorderRadius.circular(16),
           boxShadow: const [
             BoxShadow(

@@ -1,28 +1,41 @@
-// Card with the Feeds parameters and animations.
-// Present on dashboards that need details on feeds.
+// Card with the Light parameters and animations.
+// Present on dashboards that need details on lights.
 
 import 'package:flutter/material.dart';
-// import 'package:shamba_smart/pages/widgets/lineChart.dart';
 import 'package:shamba_smart/pages/widgets/switch.dart';
 
-class FeedsCard extends StatefulWidget {
-  const FeedsCard({
+class LightsCard extends StatefulWidget {
+
+ 
+
+   const LightsCard({
     Key? key,
+    // required this.nameOfCard, 
+    // required this.iconOfCard, 
+    // required this.valueOfParam, 
+    // required this.statusOfParam
   }) : super(key: key);
 
   @override
-  State<FeedsCard> createState() => _FeedsCardState();
+  State<LightsCard> createState() => _LightsCardState();
 }
 
-class _FeedsCardState extends State<FeedsCard> {
+class _LightsCardState extends State<LightsCard> {
+
+  String nameOfCard = "Light";
+  String iconOfCard = "assets/icons/lights.png";
+  String valueOfParam = '67 %';
+  String statusOfParam = "Off";
+  
   @override
+  
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.27,
+      height: MediaQuery.of(context).size.height * 0.30,
       width: MediaQuery.of(context).size.width * 0.40,
       // color: Colors.green,
       decoration: BoxDecoration(
-        color: const Color.fromRGBO(228, 55, 211, 1),
+        color: const Color.fromRGBO(255, 86, 33, 1),
         borderRadius: BorderRadius.circular(16),
         boxShadow: const [
           BoxShadow(
@@ -32,7 +45,7 @@ class _FeedsCardState extends State<FeedsCard> {
             offset: Offset(-5, -5), // changes position of shadow
           ),
           BoxShadow(
-            color: Color.fromRGBO(190, 41, 183, .4),
+            color: Color.fromRGBO(222, 72, 31, .4),
             spreadRadius: 1,
             blurRadius: 4,
             offset: Offset(5, 5), // changes position of shadow
@@ -40,6 +53,7 @@ class _FeedsCardState extends State<FeedsCard> {
         ],
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           // Line(),
@@ -52,41 +66,30 @@ class _FeedsCardState extends State<FeedsCard> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 //* text
-                const Text('Feeds',
+                Text(
+                  nameOfCard,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       // fontWeight: FontWeight.bold,
                     )),
                 //* Icon
-                Image.asset('assets/icons/feeds.png')
+                Image.asset(iconOfCard)
               ],
             ),
           ),
           //* Actions and Notifications
           Padding(
-            padding:
-                // const EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
-                const EdgeInsets.fromLTRB(20, 30, 20, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const <Widget>[
-                //* text
-                Text('No actions',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                      // fontWeight: FontWeight.bold,
-                    )),
-                //* Icon
-                Icon(
-                  Icons.access_time,
+            padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
+            child: Text(
+              valueOfParam,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
                   color: Colors.white,
-                ),
-              ],
-            ),
+                  fontSize: 40,
+                  fontWeight: FontWeight.w300,
+                )),
           ),
           //* Toggle
           Padding(
@@ -96,9 +99,10 @@ class _FeedsCardState extends State<FeedsCard> {
               children: <Widget>[
                 mySwitch(),
                 //* text
-                const Text('Feeds',
+                Text(
+                  statusOfParam,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       // fontWeight: FontWeight.bold,

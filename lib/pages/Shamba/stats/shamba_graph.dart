@@ -1,12 +1,13 @@
 // Ammonia Parameter overview. Riute to the Ammonia card.
 
 import 'package:flutter/material.dart';
-import 'package:shamba_smart/pages/widgets/newNav.dart';
+import 'package:shamba_smart/pages/widgets/new_nav.dart';
 import 'package:shamba_smart/pages/widgets/switch.dart';
-import 'package:shamba_smart/pages/widgets/graphNav.dart';
-import 'bar.dart';
+import 'package:shamba_smart/pages/widgets/graph_nav.dart';
+import 'package:shamba_smart/pages/widgets/bar.dart';
+import 'variable_data.dart';
 
-// import 'package:shamba_smart/pages/widgets/barrGraph.dart';
+
 
 class FeedsGraph extends StatefulWidget {
   const FeedsGraph({Key? key}) : super(key: key);
@@ -16,31 +17,32 @@ class FeedsGraph extends StatefulWidget {
 }
 
 class _FeedsGraphState extends State<FeedsGraph> {
+
+  //Date Range Picker
   DateTimeRange dateRange = DateTimeRange(
     start:DateTime.now(),
     end: DateTime.now()
-    );
+  );
 
-    // create TimeOfDay variable
-    TimeOfDay _timeOfDay = const TimeOfDay(hour: 2, minute: 42);
-    // show time picker method
-    void _showTimePicker() {
-      showTimePicker(
-        context: context,
-        initialTime: TimeOfDay.now(),
-        ).then((value) {
-          setState(() {
-            _timeOfDay = value!;
-            });
+  // create TimeOfDay variable
+  TimeOfDay _timeOfDay = const TimeOfDay(hour: 2, minute: 42);
+  //* show time picker method
+  void _showTimePicker() {
+    showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+      ).then((value) {
+        setState(() {
+          _timeOfDay = value!;
           });
+      });
   }
 
   @override
   Widget build(BuildContext context) {
 
-  final start = dateRange.start;
-  final end = dateRange.end;
-  final difference = dateRange.duration;
+    //* finding difference of picked dates
+    final difference = dateRange.duration;
 
 
     return Scaffold(
@@ -48,9 +50,9 @@ class _FeedsGraphState extends State<FeedsGraph> {
       appBar: AppBar(
           centerTitle: true,
           elevation: 0.0,
-          title: const Text(
-            "Ammonia",
-            style: TextStyle(color: Color.fromRGBO(255, 86, 33, 1)),
+          title: Text(
+            humidityCard,
+            style: const TextStyle(color: Color.fromRGBO(255, 86, 33, 1)),
           ),
           backgroundColor: Colors.grey[300],
           leading: IconButton(
