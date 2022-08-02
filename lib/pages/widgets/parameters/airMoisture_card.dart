@@ -1,20 +1,23 @@
-// Card with the Light parameters and animations.
-// Present on dashboards that need details on lights.
-
 import 'package:flutter/material.dart';
-// import 'package:shamba_smart/pages/widgets/lineChart.dart';
 import 'package:shamba_smart/pages/widgets/switch.dart';
 
-class LightsCard extends StatefulWidget {
-  const LightsCard({
+class airMoistureCard extends StatelessWidget {
+  const airMoistureCard({
     Key? key,
+    required this.nameOfCard,
+    required this.iconOfCard,
+    required this.valueOfParam,
+    // required this.statusOfParam,
+    // required this.color,
   }) : super(key: key);
 
-  @override
-  State<LightsCard> createState() => _LightsCardState();
-}
+  final String nameOfCard;
+  final String iconOfCard;
+  final String valueOfParam;
+  // final String statusOfParam;
+  // final Color color;
 
-class _LightsCardState extends State<LightsCard> {
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -53,48 +56,44 @@ class _LightsCardState extends State<LightsCard> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 //* text
-                const Text('Light',
+                Text(
+                  nameOfCard,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       // fontWeight: FontWeight.bold,
                     )),
                 //* Icon
-                Image.asset('assets/icons/lights.png')
+                Image.asset(iconOfCard)
               ],
             ),
           ),
           //* Actions and Notifications
-          const Padding(
-            padding: EdgeInsets.fromLTRB(20, 30, 20, 0),
-            child: Text('67%',
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
+            child: Text(
+              valueOfParam,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
-                  fontSize: 40,
+                  fontSize: 35,
                   fontWeight: FontWeight.w300,
                 )),
           ),
           //* Toggle
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 30, 30, 30),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                mySwitch(),
-                //* text
-                const Text('Light',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      // fontWeight: FontWeight.bold,
-                    )),
-                //* Icon
-              ],
-            ),
-          )
+          Image.asset('assets/icons/humidityCurve.png'),
+          const SizedBox(height:15.0)
+          // Padding(
+          //   padding: const EdgeInsets.fromLTRB(20, 30, 30, 30),
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //     children: <Widget>[
+          // Image.asset('assets/icons/humidityCurve.png'),
+          //       //* Icon
+          //     ],
+          //   ),
+          // )
         ],
       ),
     );

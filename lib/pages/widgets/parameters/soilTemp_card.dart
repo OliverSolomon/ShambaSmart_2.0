@@ -1,21 +1,28 @@
 // Card with the Temperature parameters and animations.
 // Present on dashboards that need details on Temperature.
 
-
 import 'package:flutter/material.dart';
 // import 'package:shamba_smart/pages/widgets/lineChart.dart';
 // import 'package:shamba_smart/pages/widgets/switch.dart';
 
-class TempCard extends StatefulWidget {
-  const TempCard({
+class SoilTempCard extends StatelessWidget {
+  const SoilTempCard({
     Key? key,
+    required this.nameOfCard,
+    required this.nameOfCard2,
+    required this.iconOfCard,
+    required this.valueOfParam,
+    required this.animOfParam,
+    required this.statusOfParam,
   }) : super(key: key);
 
-  @override
-  State<TempCard> createState() => _TempCardState();
-}
+  final String nameOfCard;
+  final String nameOfCard2;
+  final String iconOfCard;
+  final String valueOfParam;
+  final String animOfParam;
+  final String statusOfParam;
 
-class _TempCardState extends State<TempCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -56,17 +63,18 @@ class _TempCardState extends State<TempCard> {
                 //* text
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const <Widget>[
-                    Text('Temparature',
+                  children: <Widget>[
+                    Text(
+                      nameOfCard,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        // fontWeight: FontWeight.bold,
+                      )),
+                    Text(nameOfCard2,
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          // fontWeight: FontWeight.bold,
-                        )),
-                    Text(' & Humidity',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 16,
                           // fontWeight: FontWeight.bold,
@@ -74,7 +82,7 @@ class _TempCardState extends State<TempCard> {
                   ],
                 ),
                 //* Icon
-                Image.asset('assets/icons/temp.png')
+                Image.asset(iconOfCard)
               ],
             ),
           ),
@@ -86,23 +94,20 @@ class _TempCardState extends State<TempCard> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const <Widget>[
+              children: <Widget>[
                 //* text
-                Text('24 °C',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
-                      // fontWeight: FontWeight.bold,
-                    )),
+                Text(
+                  valueOfParam,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 35,
+                    fontWeight: FontWeight.w300,
+                  )),
+
+                const SizedBox(height:15.0),
                 //* Icon
-                Text('67%',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      // fontWeight: FontWeight.bold,
-                    )),
+                Image.asset(animOfParam),
               ],
             ),
           ),
@@ -110,17 +115,17 @@ class _TempCardState extends State<TempCard> {
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 0, 0, 30),
             child: RichText(
-                text: const TextSpan(
+                text: TextSpan(
                     text: "Level: ",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                       color: Colors.white,
                     ),
                     children: <TextSpan>[
                   TextSpan(
-                      text: " Normal",
-                      style: TextStyle(
+                      text: statusOfParam,
+                      style: const TextStyle(
                         fontSize: 16,
                         color: Colors.white,
                       ))

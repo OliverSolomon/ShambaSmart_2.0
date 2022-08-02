@@ -5,16 +5,22 @@ import 'package:flutter/material.dart';
 // import 'package:shamba_smart/pages/widgets/lineChart.dart';
 import 'package:shamba_smart/pages/widgets/switch.dart';
 
-class FeedsCard extends StatefulWidget {
+// ignore: must_be_immutable
+class FeedsCard extends StatelessWidget {
   const FeedsCard({
     Key? key,
+    required this.nameOfCard,
+    required this.iconOfCard,
+    required this.statusOfParam,
   }) : super(key: key);
 
-  @override
-  State<FeedsCard> createState() => _FeedsCardState();
-}
+  final String nameOfCard;
+  final String iconOfCard;
+  // final String valueOfParam;
+  final String statusOfParam;
 
-class _FeedsCardState extends State<FeedsCard> {
+    
+  //! values for variables
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,15 +58,16 @@ class _FeedsCardState extends State<FeedsCard> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 //* text
-                const Text('Feeds',
+                Text(
+                  nameOfCard,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       // fontWeight: FontWeight.bold,
                     )),
                 //* Icon
-                Image.asset('assets/icons/feeds.png')
+                Image.asset(iconOfCard)
               ],
             ),
           ),
@@ -71,17 +78,18 @@ class _FeedsCardState extends State<FeedsCard> {
                 const EdgeInsets.fromLTRB(20, 30, 20, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const <Widget>[
+              children: <Widget>[
                 //* text
-                Text('No actions',
+                Text(
+                  statusOfParam,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 12,
                       // fontWeight: FontWeight.bold,
                     )),
                 //* Icon
-                Icon(
+                const Icon(
                   Icons.access_time,
                   color: Colors.white,
                 ),
@@ -96,7 +104,7 @@ class _FeedsCardState extends State<FeedsCard> {
               children: <Widget>[
                 mySwitch(),
                 //* text
-                const Text('Feeds',
+                const Text('Off',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white,

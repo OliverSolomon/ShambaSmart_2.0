@@ -2,9 +2,9 @@
 // We all gather here
 
 import 'package:flutter/material.dart';
-import 'package:shamba_smart/pages/Home.dart';
-import 'package:shamba_smart/pages/Shamba/Shamba.dart';
-import 'package:shamba_smart/pages/Kuku/Kuku.dart';
+import 'package:shamba_smart/pages/home.dart';
+import 'package:shamba_smart/pages/Shamba/shamba.dart';
+import 'package:shamba_smart/pages/Kuku/kuku.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,13 +1,19 @@
 // This is a dashboard for all Kuku coop parametres, i.e Humidity, Temperature, light, feeds
 
 import 'package:flutter/material.dart';
-import 'package:shamba_smart/pages/widgets/newNav.dart';
-import 'package:shamba_smart/pages/widgets/globalTop.dart';
-import 'package:shamba_smart/pages/widgets/KukuParameters/AmmoniaParamCard.dart';
-import 'package:shamba_smart/pages/widgets/KukuParameters/FeedsParamCard.dart';
-import 'package:shamba_smart/pages/widgets/KukuParameters/TempParamCard.dart';
-import 'package:shamba_smart/pages/widgets/KukuParameters/LightsParamCard.dart';
-import 'package:shamba_smart/pages/Kuku/params/FeedsGraph.dart';
+import 'package:shamba_smart/pages/widgets/new_nav.dart';
+import 'package:shamba_smart/pages/widgets/global_top.dart';
+import 'package:shamba_smart/pages/widgets/parameters/ammonia_card.dart';
+import 'package:shamba_smart/pages/widgets/parameters/feeds_card.dart';
+import 'package:shamba_smart/pages/widgets/parameters/temp_card.dart';
+import 'package:shamba_smart/pages/widgets/parameters/lights_card.dart';
+import 'package:shamba_smart/pages/Kuku/stats/ammonia_graph.dart';
+import 'package:shamba_smart/pages/Kuku/stats/temp_graph.dart';
+import 'package:shamba_smart/pages/Kuku/stats/feeds_graph.dart';
+import 'package:shamba_smart/pages/Kuku/stats/light_graph.dart';
+
+
+
 
 class Kuku extends StatefulWidget {
   const Kuku({Key? key}) : super(key: key);
@@ -90,10 +96,14 @@ class _KukuState extends State<Kuku> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const FeedsGraph()),
+                                  builder: (context) => const AmmoniaGraph()),
                             );
                           },
-                          child: const AmmoniaCard()),
+                          child: const AmmoniaCard(
+                            nameOfCard: "Ammonia", 
+                            valueOfParam: "48 %", 
+                            iconOfCard: "assets/icons/Humidity.png", 
+                            statusOfParam: "Normal")),
                       // division
                       const SizedBox(
                         height: 20.0,
@@ -108,7 +118,10 @@ class _KukuState extends State<Kuku> {
                                   builder: (context) => const FeedsGraph()),
                             );
                           },
-                          child: const FeedsCard())
+                          child: const FeedsCard(
+                            nameOfCard: "Feeds", 
+                            iconOfCard: "assets/icons/feeds.png", 
+                            statusOfParam: "No Actions"))
                     ],
                   ),
                   Column(
@@ -119,10 +132,16 @@ class _KukuState extends State<Kuku> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const FeedsGraph()),
+                                  builder: (context) => const TempHumGraph()),
                             );
                           },
-                          child: const TempCard()),
+                          child: const TempCard(
+                            nameOfCard: "Temperature", 
+                            nameOfCard2: "& Humidity", 
+                            iconOfCard: "assets/icons/temp.png", 
+                            statusOfParam: "Normal", 
+                            valueOfParamH: "67 %", 
+                            valueOfParamT: "24 °C")),
                       // division
                       const SizedBox(
                         height: 20.0,
@@ -134,10 +153,14 @@ class _KukuState extends State<Kuku> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const FeedsGraph()),
+                                  builder: (context) => const LightGraph()),
                             );
                           },
-                          child: const LightsCard())
+                          child: const LightsCard(
+                            nameOfCard: "Lights", 
+                            valueOfParam: "67 %", 
+                            iconOfCard: "assets/icons/lights.png", 
+                            statusOfParam: "Off"))
                     ],
                   )
                 ]),

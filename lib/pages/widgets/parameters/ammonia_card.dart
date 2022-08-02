@@ -4,16 +4,23 @@
 import 'package:flutter/material.dart';
 // import 'package:shamba_smart/pages/widgets/lineChart.dart';
 
-class AmmoniaCard extends StatefulWidget {
+class AmmoniaCard extends StatelessWidget {
   const AmmoniaCard({
     Key? key,
+    required this.nameOfCard,
+    required this.iconOfCard,
+    required this.valueOfParam,
+    required this.statusOfParam,
+    
   }) : super(key: key);
 
-  @override
-  State<AmmoniaCard> createState() => _AmmoniaCardState();
-}
+  final String nameOfCard;
+  final String iconOfCard;
+  final String valueOfParam;
+  final String statusOfParam;
 
-class _AmmoniaCardState extends State<AmmoniaCard> {
+  //! values for variables
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,24 +58,26 @@ class _AmmoniaCardState extends State<AmmoniaCard> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 //* text
-                const Text('Ammonia',
+                Text(
+                  nameOfCard,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       // fontWeight: FontWeight.bold,
                     )),
                 //* Icon
-                Image.asset('assets/icons/Humidity.png')
+                Image.asset(iconOfCard)
               ],
             ),
           ),
           //* Line Graph
           Image.asset('assets/icons/moistureCurve.png'),
           //* Value of Param in %
-          const Text('48 %',
+          Text(
+            valueOfParam,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 40,
                 fontWeight: FontWeight.w300,
@@ -77,17 +86,17 @@ class _AmmoniaCardState extends State<AmmoniaCard> {
           Padding(
             padding: const EdgeInsets.fromLTRB(0, 0, 0, 30),
             child: RichText(
-                text: const TextSpan(
+                text: TextSpan(
                     text: "Level: ",
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
                       color: Colors.white,
                     ),
                     children: <TextSpan>[
                   TextSpan(
-                      text: " Normal",
-                      style: TextStyle(
+                      text: statusOfParam,
+                      style: const TextStyle(
                         fontSize: 16,
                         color: Colors.white,
                       ))

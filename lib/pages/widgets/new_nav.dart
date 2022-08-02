@@ -1,11 +1,11 @@
 // Custom Bottom Navigaton bar
 
 import 'package:flutter/material.dart';
-import 'package:shamba_smart/pages/Shamba/Shamba.dart';
-import 'package:shamba_smart/pages/Kuku/Kuku.dart';
-import 'package:shamba_smart/pages/shambaCare/Care.dart';
-import 'package:shamba_smart/pages/Sokoni/Sokoni.dart';
-import 'package:shamba_smart/pages/Home.dart';
+import 'package:shamba_smart/pages/Shamba/shamba.dart';
+import 'package:shamba_smart/pages/Kuku/kuku.dart';
+import 'package:shamba_smart/pages/ShambaCare/care.dart';
+import 'package:shamba_smart/pages/Sokoni/sokoni.dart';
+import 'package:shamba_smart/pages/home.dart';
 
 class Nav extends StatefulWidget {
   const Nav({
